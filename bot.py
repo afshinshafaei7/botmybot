@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 from save import save
-
+import os
 # ======= مشخصات تو =======
 my_info = {
     "name": "افشین",
@@ -13,8 +13,7 @@ my_info = {
 # ======= وضعیت کاربران =======
 user_state = {}
 
-TOKEN = "8384330394:AAEov4TaNmssTP0mcra_Y1HU-gmjDnf-K24"
-
+TOKEN = os.getenv("8384330394:AAEov4TaNmssTP0mcra_Y1HU-gmjDnf-K24")
 # ======= فرمان start =======
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
